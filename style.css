@@ -1,20 +1,42 @@
-h1{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'fantasy';
     text-align: center;
+    margin-top: 0.5rem;
 }
 
-.game {
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+h3{
+    text-align: left;
+    font-size: 2rem;
+}
+
+.container{
     position: absolute;
-    top: 4rem;
     left: 50%;
     transform: translate(-50%);
-    border: 1px solid black;
-    box-shadow: 5px 5px black;
-    background-color: aqua;
-    height: 600px;
-    width: 650px;
+    width: 600px;
+    height: 520px;
+    top: 9rem;
+    background: aqua;
+    border: 2px solid black;
+    padding: .5rem;
+    box-shadow: 5px 10px grey;
+}
 
-    padding: 1rem;
-
+.container table tr td{
+    width: 90px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
 }
 
 .slot{
@@ -38,17 +60,4 @@ h1{
 
 }
 
-.game div {
-    height: 20px;
-    width: 20px;
-}
 
-.player-one {
-    background-color: red;
-    border-radius: 10px;
-}
-
-.player-two {
-    background-color: yellow;
-    border-radius: 10px;
-}
