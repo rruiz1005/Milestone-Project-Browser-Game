@@ -15,15 +15,15 @@ player2Color = 'yellow'
 
 var tableRow = document.getElementsByTagName('tr')
 var tableCell = document.getElementsByTagName('td')
-var tableSlot = document.querySelector('.slot')
+var tableSlot = document.querySelectorAll('.slot')
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('.reset')
 
-for(let i = 0; i < tableCell.length; i++){
-    tableCell[i].addEventListener('click', (e) =>{
-        console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
-    })
-}
+// for(let i = 0; i < tableCell.length; i++){
+//     tableCell[i].addEventListener('click', (e) =>{
+//         console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
+//     })
+// }
 
 var currentPlayer = 1
 playerTurn.textContent = (`${player1}'s turn!`);
@@ -46,14 +46,31 @@ function changeColor(e){
             if(currentPlayer === 1){
                 row[0].style.backgroundColor = player1Color
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    return(alert('winner'))
+                    playerTurn.textContent = `${player1} wins!`
+                    playerTurn.style.color = player1Color
+                    return(alert(`${player1} WINS!!`))
+                }else if(drawCheck()){
+                    playerTurn.textContent = 'Game is a draw!'
+                    return alert('DRAW')
+                }else{
+                    playerTurn.textContent = (`${player2}'s turn!`);
+                    return currentPlayer = 2
                 }
-                playerTurn.textContent = (`${player2}'s turn!`);
-                return currentPlayer = 2
             }else{
                 row[0].style.backgroundColor = player2Color
-                playerTurn.textContent = (`${player1}'s turn!`)
-                return currentPlayer = 1
+                playerTurn.textContent = `${player1}'s turn!`
+                if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
+                    playerTurn.textContent = `${player2} wins!`
+                    playerTurn.style.color = player2Color
+                    return(alert(`${player2} WINS!!`))
+                }else if(drawCheck()){
+                    playerTurn.textContent = 'Game is a draw!'
+                    return alert('DRAW')
+
+                }else{
+                    playerTurn.textContent = (`${player1}'s turn!`);
+                    return currentPlayer = 1
+                }
             }
         }
     }
@@ -105,3 +122,24 @@ function diagonalCheck2(){
         }
     }
 }
+
+function drawCheck(){
+    let fullSlot = [];
+    for(let i = 0; i < tableCell.length; i++){
+        if(tableCell[i].style.backgroundColor !== 'white'){
+            fullSlot.push(tableCell[i]);
+        }
+    }
+    if (fullSlot.length === tableCell.length){
+        return true
+    }
+}
+
+reset.addEventListener('click', () =>{
+    tableSlot.forEach(slot =>{
+        slot.style.backgroundColor = 'white'
+
+    })
+    playerTurn.style.color = 'black';
+    return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`)
+})

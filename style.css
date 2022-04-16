@@ -17,6 +17,19 @@ h3{
     font-size: 2rem;
 }
 
+a{
+    position: absolute;
+    top:6rem;
+    font-size: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    color: black;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
 .container{
     position: absolute;
     left: 50%;
@@ -49,15 +62,23 @@ h3{
 
 .reset{
     position: absolute;
-    top: 95vh;
+    top:38rem;
     left: 50%;
     transform: translate(-50%);
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 5rem;
+    width: 100px;
+    height: 30px;
     text-align: center;
+    padding: 0.3rem;
+    border: 1px solid black;
+    background: #f8ebeb;
     cursor: pointer;
-
+    box-shadow: 6px 5px #888888;
+    transition: .5s;
 }
+
+.reset:hover{
+    transition: 0.8s;
+    box-shadow: 0px 0px #888888;
+    }
 
 

@@ -1,2 +1,2 @@
 # Milestone-Project-Browser-Game
-Pong 
+This game is called "Connect 4"
