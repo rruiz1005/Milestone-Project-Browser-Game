@@ -1,12 +1,44 @@
-.grid {
-    border: 1px solid;
-    height: 120px;
-    width: 140px;
-    display: flex;
-    flex-wrap: wrap;
+h1{
+    text-align: center;
 }
 
-.grid div {
+.game {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid black;
+    box-shadow: 5px 5px black;
+    background-color: aqua;
+    height: 600px;
+    width: 650px;
+
+    padding: 1rem;
+
+}
+
+.slot{
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 60%;
+}
+
+.reset{
+    position: absolute;
+    top: 95vh;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 5rem;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.game div {
     height: 20px;
     width: 20px;
 }
