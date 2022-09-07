@@ -1,0 +1,85 @@
+$color_1: black;
+$font-family_1: 'fantasy';
+$background-color_1: white;
+$background-color_2: #dcdcdc;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-family_1;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+h1 {
+	text-align: center;
+	font-size: 3rem;
+}
+h3 {
+	text-align: left;
+	font-size: 2rem;
+}
+a {
+	position: absolute;
+	top: 6rem;
+	font-size: 2rem;
+	left: 50%;
+	transform: translate(-50%);
+	color: $color_1;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.game {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	width: 600px;
+	height: 520px;
+	top: 9rem;
+	background: aqua;
+	border: 2px solid black;
+	padding: .5rem;
+	box-shadow: 5px 10px grey;
+	table {
+		tr {
+			td {
+				width: 90px;
+				height: 80px;
+				border: 2px solid black;
+				border-radius: 50%;
+				background-color: $background-color_1;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.slot {
+	width: 90px;
+	height: 90px;
+	background-color: $background-color_1;
+	border: 1px solid black;
+	border-radius: 60%;
+}
+.reset {
+	position: absolute;
+	top: 38rem;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	padding: 0.3rem;
+	border: 1px solid black;
+	background: #f8ebeb;
+	cursor: pointer;
+	box-shadow: 6px 5px #888888;
+	transition: .5s;
+	&:hover {
+		transition: 0.8s;
+		box-shadow: 0px 0px #888888;
+	}
+}
+body {
+	background-color: $background-color_2;
+}
